@@ -2,11 +2,8 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-# Install GL dependencies for OpenCV
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
-    && rm -rf /var/lib/apt/lists/*
+# No system dependencies needed for opencv-python-headless!
+# Keeps the image small and build fast.
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -15,7 +12,7 @@ COPY . .
 
 # Default environment variables
 ENV PORT=7860
-# Enable low memory mode by default for containers to ensure it runs on free tiers (512MB RAM)
+# Enable low memory mode by default for containers to ensure it runs on free tiers
 ENV LOW_MEMORY_MODE=true
 
 EXPOSE 7860
