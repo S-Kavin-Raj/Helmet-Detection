@@ -14,11 +14,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Default environment variables
-ENV PORT=5000
+ENV PORT=7860
 # Enable low memory mode by default for containers to ensure it runs on free tiers (512MB RAM)
 ENV LOW_MEMORY_MODE=true
 
-EXPOSE 5000
+EXPOSE 7860
 
 # Run the application
 CMD ["python", "run_production.py"]
