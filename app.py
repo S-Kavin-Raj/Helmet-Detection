@@ -122,9 +122,10 @@ def get_samples():
         for f in os.listdir(media_dir):
             if f.lower().endswith(('.jpg', '.jpeg', '.png')):
                 images.append(f)
-            elif f.lower().endswith(('.mp4', '.avi', '.mov')):
-                videos.append(f)
-    return jsonify({'images': images, 'videos': videos})
+            # Video samples disabled
+            # elif f.lower().endswith(('.mp4', '.avi', '.mov')):
+            #     videos.append(f)
+    return jsonify({'images': images, 'videos': []})
 
 if __name__ == '__main__':
 
