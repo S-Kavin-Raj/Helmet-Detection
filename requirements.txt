@@ -1,0 +1,9 @@
+flask
+flask-cors
+opencv-python
+opencv-contrib-python
+ultralytics
+cvzone
+numpy
+pillow
+waitress
